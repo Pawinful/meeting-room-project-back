@@ -1,12 +1,24 @@
 import mongoose from 'mongoose';
 import Booking from '../models/booking.model.js';
 import User from '../models/user.model.js';
+import Room from '../models/room.model.js';
 
 export const getUserOngoingBooking = async (req, res) => {
     const body = req.body;
     const user = await User.findOne({ username: body.username });
     try {
         const userOngoingBooking = await Booking.find().where("_id").in(user.ongoingBooking).exec();
+        return res.status(200).json({ success: true, data: userOngoingBooking })
+    } catch (error) {
+        return res.status(500).json({ success: false, message: error.message });
+    }
+}
+
+export const getRoomOngoingBooking = async (req, res) => {
+    const body = req.body;
+    // const room = await Room.findOne({ username: body.roomNameEN });
+    try {
+        const userOngoingBooking = await Booking.find({ roomNameEN: body.roomNameEN });
         return res.status(200).json({ success: true, data: userOngoingBooking })
     } catch (error) {
         return res.status(500).json({ success: false, message: error.message });
