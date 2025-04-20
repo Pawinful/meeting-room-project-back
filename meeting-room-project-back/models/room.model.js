@@ -22,6 +22,10 @@ const RoomSchema = mongoose.Schema(
             type: String,
             required: false
         },
+        capacity: {
+            type: String,
+            required: false
+        },
         branch: {
             type: String,
             required: [true, "Please enter University branch"],
