@@ -4,8 +4,9 @@ import User from '../models/user.model.js';
 import Room from '../models/room.model.js';
 
 export const getUserOngoingBooking = async (req, res) => {
-    const body = req.body;
-    const user = await User.findOne({ username: body.username });
+    // const body = req.body;
+    const params = req.params;
+    const user = await User.findOne({ username: params.username });
     try {
         const userOngoingBooking = await Booking.find().where("_id").in(user.ongoingBooking).exec();
         return res.status(200).json({ success: true, data: userOngoingBooking })
@@ -45,7 +46,8 @@ export const getAllBooking = async (req, res) => {
 
 export const getUserBookingHistory = async (req, res) => {
     const body = req.body;
-    const user = await User.findOne({ username: body.username });
+    const params = req.params;
+    const user = await User.findOne({ username: params.username });
     try {
         const userBookingHistory = await Booking.find().where("_id").in(user.bookingHistory).exec();
         return res.status(200).json({ success: true, data: userBookingHistory });

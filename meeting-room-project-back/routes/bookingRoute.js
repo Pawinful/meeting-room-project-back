@@ -3,11 +3,11 @@ import { approveBooking, book, getAllBooking, getAllPendingBooking, getBooking, 
 
 const router = express.Router();
 
-router.get('/getUserBooking', getUserOngoingBooking);
+router.get('/getUserBooking/:username', getUserOngoingBooking);
 
 router.get('/getRoomBooking', getRoomOngoingBooking);
 
-router.get('/getBookingHistory', getUserBookingHistory);
+router.get('/getBookingHistory/:username', getUserBookingHistory);
 
 router.post('/getBooking', getBooking);
 
