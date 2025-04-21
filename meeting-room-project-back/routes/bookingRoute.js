@@ -1,5 +1,5 @@
 import express from 'express';
-import { approveBooking, book, getAllBooking, getAllPendingBooking, getBooking, getRoomOngoingBooking, getUserBookingHistory, getUserOngoingBooking, migrate } from '../controller/bookingController.js';
+import { approveBooking, book, deleteBooking, editBooking, getAllBooking, getAllPendingBooking, getBooking, getRoomOngoingBooking, getUserBookingHistory, getUserOngoingBooking, migrate } from '../controller/bookingController.js';
 
 const router = express.Router();
 
@@ -9,7 +9,11 @@ router.get('/getRoomBooking', getRoomOngoingBooking);
 
 router.get('/getBookingHistory/:username', getUserBookingHistory);
 
-router.post('/getBooking', getBooking);
+router.post('/getBooking/:id', getBooking);
+
+router.put('/editBooking/:id', editBooking);
+
+router.delete('/deleteBooking/:id', deleteBooking);
 
 router.get('/getPendingBooking', getAllPendingBooking);
 

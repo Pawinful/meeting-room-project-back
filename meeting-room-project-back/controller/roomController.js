@@ -31,7 +31,7 @@ export const addRoom = async (req, res) => {
     console.log(checkRoom);
 
     if(checkRoom != null) {
-        return res.status(500).json({ success: false, data: checkRoom });
+        return res.status(500).json({ success: false, errorMessage: "this room is already existed id: " + checkRoom._id });
     }
 
     try{
