@@ -117,6 +117,7 @@ export const book = async (req, res) => {
             customerDepartment: body.customerDepartment,
             customerEmail: body.customerEmail,
             bookingStartTime: body.bookingStartTime,
+            bookingTime: body.bookingTime,
             bookingEndTime: body.bookingEndTime,
             requireApprove: body.requireApprove,
         })

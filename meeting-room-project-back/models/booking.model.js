@@ -34,6 +34,10 @@ const BookingSchema = mongoose.Schema(
             type: Date,
             required: true
         },
+        bookingTime: {
+            type: Array,
+            required: true
+        },
         bookingEndTime: {
             type: Date,
             required: true
