@@ -19,7 +19,7 @@ export const getRoomOngoingBooking = async (req, res) => {
     const {id} = req.params;
     // const room = await Room.findOne({ username: body.roomNameEN });
     try {
-        const userOngoingBooking = await Booking.find({ roomNameEN: id });
+        const userOngoingBooking = await Booking.find({ _id: id });
         return res.status(200).json({ success: true, data: userOngoingBooking })
     } catch (error) {
         return res.status(500).json({ success: false, message: error.message });
