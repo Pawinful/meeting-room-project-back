@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.get('/getUserBooking/:username', getUserOngoingBooking);
 
-router.get('/getRoomBooking/:id', getRoomOngoingBooking);
+router.get('/getRoomBooking', getRoomOngoingBooking);
 
 router.get('/getBookingHistory/:username', getUserBookingHistory);
 
