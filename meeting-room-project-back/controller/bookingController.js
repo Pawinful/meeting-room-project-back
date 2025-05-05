@@ -113,6 +113,7 @@ export const book = async (req, res) => {
             meetingDescription: body.meetingDescription,
             roomNameTH: body.roomNameTH,
             roomNameEN: body.roomNameEN,
+            roomId: body.roomId,
             customerUsername: body.customerUsername,
             customerDepartment: body.customerDepartment,
             customerEmail: body.customerEmail,
