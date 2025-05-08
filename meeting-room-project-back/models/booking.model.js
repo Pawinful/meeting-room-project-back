@@ -50,6 +50,11 @@ const BookingSchema = mongoose.Schema(
             type: Boolean,
             required: true
         },
+        confirmStatus: {
+            type: String,
+            required: true,
+            default: "PENDING"
+        },
         approver: {
             type: String,
             required: true,
